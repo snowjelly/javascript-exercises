@@ -12,7 +12,8 @@ const removeFromArray = function (array, ...remove) {
       );
       //console.log(filteredNumber);
       //console.log(concatNum = concatNum.concat(arrayValue));
-      console.log(concatNum = concatNum.concat(filteredNumber));
+      console.log(filteredNumber);
+      // if the value in the array is a number. create a new array
     }
   }
   
