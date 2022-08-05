@@ -4,23 +4,25 @@ const removeFromArray = function (array, ...remove) {
   let int = 0;
   let lengthStore = array.length;
 
-function checkIndex() {
+  function checkIndex() {
     let found = [];
     for (i = 0; i < remove.length; i++) {
+      if (found[i] < 0) {
+        console.log("spliced " + i);
+        found.splice(i, 1);
+      } else {
         int = found.push(array.indexOf(remove[i]));
       }
-      return found;
-}
-
-
-
-  for (removal of checkIndex()) {
-      array.splice(removal, 1);
-      console.log("array: " + array);
-      console.log("checkIndex: " + checkIndex());
     }
 
+    return found.sort(); // sort to protect the .shift method?
+  }
 
+  for (removal of checkIndex()) {
+    array.splice(removal, 1);
+    console.log("array: " + array);
+    console.log("checkIndex: " + checkIndex());
+  }
 };
 console.log(removeFromArray([1, 2, 3, 4], 3, 4));
 
