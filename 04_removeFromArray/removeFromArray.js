@@ -16,6 +16,8 @@ const removeFromArray = function (array, ...remove) {
     return found.sort(); // sort to protect the .shift method?
   }
 
+
+
   for (removal of checkIndex()) {
     array.splice(removal, 1);
     console.log("array: " + array);
