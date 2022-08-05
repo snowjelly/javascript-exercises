@@ -3,14 +3,12 @@ const removeFromArray = function (array, ...remove) {
   let fn = [];
   let int = 0;
   let lengthStore = array.length;
+  let found = [];
 
   function checkIndex() {
-    let found = [];
+    found = [];
     for (i = 0; i < remove.length; i++) {
         console.log("found: " + found);
-        if (found[0] < 0) {
-            found.shift();
-      } 
         int = found.push(array.indexOf(remove[i]));
     }
     return found.sort(); // sort to protect the .shift method?
@@ -19,9 +17,11 @@ const removeFromArray = function (array, ...remove) {
 
 
   for (removal of checkIndex()) {
+    console.log("removal: " + removal);
     array.splice(removal, 1);
     console.log("array: " + array);
     console.log("checkIndex: " + checkIndex());
+    
   }
 };
 console.log(removeFromArray([1, 2, 3, 4], 3, 4));
