@@ -7,14 +7,12 @@ const removeFromArray = function (array, ...remove) {
   function checkIndex() {
     let found = [];
     for (i = 0; i < remove.length; i++) {
-      if (found[i] < 0) {
-        console.log("spliced " + i);
-        found.splice(i, 1);
-      } else {
+        console.log("found: " + found);
+        if (found[0] < 0) {
+            found.shift();
+      } 
         int = found.push(array.indexOf(remove[i]));
-      }
     }
-
     return found.sort(); // sort to protect the .shift method?
   }
 
