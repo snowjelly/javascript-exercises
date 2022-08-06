@@ -35,13 +35,13 @@ const removeIndex = () => {
     if (removeIndex() === null) {
       return arrayKeep;
     }
-    //loop through the arguments that need to be removed to find what we need to return to filter out
     // el is result[i]
     // index is 'i'
+    //loop through the arguments that need to be removed to find what we need to return to filter out
     for (value of args) { 
       // value is args[i]
 
-       console.log("testing removal of value: "+ value, "on element: " + el, "in index: " + index);
+      console.log("testing removal of value: "+ value, "on element: " + el, "in index: " + index);
       
 
 
@@ -61,20 +61,9 @@ const removeIndex = () => {
   return result;
 
 
-  // const timeToFilter = (value) => { //this piece of shit is not looping. it just returns on the first value it gets.
-  //   //how the fuck do i filter an array without just returning the first value
-  //   for (i = 0; i < args.length; i++) {
-  //     if (arrayKeep.includes(args[i]) == false) {
-  //       return false;
-  //     } else {
-  //       return value != args[i];
-  //     }
-  //   }
-  // }
-  //const result = arrayKeep.filter((element, index, array) => element); //since .filter loops through arrayKeep maybe i can ask it to check if it includes the values
-  //i need AND returns the correct values before creating the new array
+
 };
-console.log(removeFromArray([1, 2, 3, 4], 2));
+console.log(removeFromArray([1, 2, 3, 4], 2, 3));
 
 //console.log(removeFromArray(["yes", "no", "epic"], "yes"));
 // Do not edit below this line
