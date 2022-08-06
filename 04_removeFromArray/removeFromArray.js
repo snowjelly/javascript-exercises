@@ -1,28 +1,32 @@
-const removeFromArray = function (array, ...remove) {
-  let concatNum = [];
-  let fn = [];
-  let int = 0;
-  let lengthStore = array.length;
-  let found = [];
+const removeFromArray = function (arrayKeep, ...arrayRemove) {
+  const args = Array.from(arrayRemove);
+  let searchIndex = [];
 
-  function checkIndex() {
-    found = [];
-    for (i = 0; i < remove.length; i++) {
-        console.log("found: " + found);
-        int = found.push(array.indexOf(remove[i]));
+  
+const createSearchIndex = function () {
+    for (i = 0; i < arrayRemove.length; i++) {
+        searchIndex.push(arrayKeep.indexOf(args[i]));
     }
-    return found.sort(); // sort to protect the .shift method?
-  }
+    return console.log(searchIndex);
+}
 
 
+const killSearchIndex = function () {
+  return console.log(searchIndex = []);
+}
 
-  for (removal of checkIndex()) {
-    console.log("removal: " + removal);
-    array.splice(removal, 1);
-    console.log("array: " + array);
-    console.log("checkIndex: " + checkIndex());
-    
-  }
+
+for (i = 0; i < arrayKeep.length; i++) {
+    if (arrayKeep.includes(args[i])) {
+        createSearchIndex();
+    }
+}
+
+for (i = 0; i < createSearchIndex.length; i++) {
+    return arrayKeep.filter((el) => el.includes)
+}
+
+
 };
 console.log(removeFromArray([1, 2, 3, 4], 3, 4));
 
