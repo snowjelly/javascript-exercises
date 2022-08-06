@@ -29,40 +29,32 @@ const removeIndex = () => {
   }
   logPreResult();
 
-
+  let iter = 0;
   //loop and filter out whatever we return. el is essentially result[i] and index is "i"
   const result = arrayKeep.filter((el, index) => { 
+  
     if (removeIndex() === null) {
       return arrayKeep;
     }
     // el is result[i]
     // index is 'i'
     //loop through the arguments that need to be removed to find what we need to return to filter out
-    if (arrayKeep.includes(args[index])) {
-      console.log("inside if index = " + index, "args[index] = " + args[index]);
-    for (i = 0; i < args.length; i++) {
+    
 
         
-      console.log("testing removal of value: " + args[i], "on element: " + el, "in indicies: " + "arrayKeep: " + index + " args: " + i);
+      console.log("testing removal of value: " + args[iter], "on element: " + el, "in indicies => " + "arrayKeep: " + index + " args: " + iter);
       
 
 
       
       //return
-      if (el != args[i]) {
-        return el != args[i];
+      if (el != args[iter]) {
+        return el;
       }
       else {
-        console.log("value " + args[i] + " was removed succesfully");
-        break;
+        console.log("value " + args[iter] + " was removed succesfully");
+        iter++;
       }
-
-      } 
-
-    } else {
-      console.log("yep");
-    }
-
     
     
   });
@@ -71,7 +63,7 @@ const removeIndex = () => {
 
 
 };
-console.log(removeFromArray([1, 2, 3, 4], 4));
+console.log(removeFromArray([1, 2, 3, 4], 2, 3));
 
 //console.log(removeFromArray(["yes", "no", "epic"], "yes"));
 // Do not edit below this line
