@@ -29,16 +29,19 @@ const removeIndex = () => {
     //loop through the arguments that need to be removed to find what we need to return to filter out
     for (value of args) { 
       // value is args[i]
-       console.log("value: "+ value, "el: " + el, "index: " + index);
-      // el is result[index] 
-      // console.log("el: " + el);
+      // el is result[i]
       // index is 'i'
-      // console.log("index: " + index);
+       console.log("testing removal of value: "+ value, "on element: " + el, "in index: " + index);
+      
+
 
       
       //return
       if (el != value) {
         return el != value;
+      }
+      else {
+        console.log("value " + value + " was removed succesfully");
       }
     }
 
@@ -61,7 +64,7 @@ const removeIndex = () => {
   //const result = arrayKeep.filter((element, index, array) => element); //since .filter loops through arrayKeep maybe i can ask it to check if it includes the values
   //i need AND returns the correct values before creating the new array
 };
-console.log(removeFromArray([1, 2, 3, 4], 2, 3));
+console.log(removeFromArray([1, 2, 3, 4], 3));
 
 //console.log(removeFromArray(["yes", "no", "epic"], "yes"));
 // Do not edit below this line
