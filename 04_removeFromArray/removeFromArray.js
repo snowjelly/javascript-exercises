@@ -19,7 +19,7 @@ const removeIndex = () => {
   const logPreResult = () => {
   //args is 'arrayRemove' converted to Array object
   //removeIndex is an array displaying the index of items found in arrayKeep that need to be removed 
-  console.table(["remove values: " + args, "values found in indicies: " + removeIndex()]);
+  console.log("remove values: " + args, "=> " + "the values were found in indicies: " + removeIndex());
   }
   logPreResult();
 
@@ -28,14 +28,10 @@ const removeIndex = () => {
   const result = arrayKeep.filter((el, index) => { 
     //loop through the arguments that need to be removed to find what we need to return to filter out
     for (value of args) { 
-      // value = args[i]
-      console.log("value: "+ value);
-      
-
+      // value is args[i]
+       console.log("value: "+ value, "el: " + el, "index: " + index);
       // el is result[index] 
       // console.log("el: " + el);
-      
-
       // index is 'i'
       // console.log("index: " + index);
 
