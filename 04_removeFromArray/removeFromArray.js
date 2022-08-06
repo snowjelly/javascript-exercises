@@ -63,7 +63,7 @@ const removeIndex = () => {
 
 
 };
-console.log(removeFromArray([1, 2, 3, 4], 2, 3));
+console.log(removeFromArray([1, 2, 3, 4], 1, 4));
 
 //console.log(removeFromArray(["yes", "no", "epic"], "yes"));
 // Do not edit below this line
