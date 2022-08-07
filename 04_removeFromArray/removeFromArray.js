@@ -33,7 +33,7 @@ const removeFromArray = function (arrayKeep, ...arrayRemove) {
     // if (removeIndex() === null) { this was failing a test lol
     //   return arrayKeep;
     // }
-    while (argsPosCount != -1) {
+    while (true) {
       // el is result[i]
       // index is 'i'
       //loop through the arguments that need to be removed to find what we need to return to filter out
@@ -46,27 +46,25 @@ const removeFromArray = function (arrayKeep, ...arrayRemove) {
       }
 
       //return
-
       if (el != args[argsPosCount] && argsPosCount < args.length) {
         argsPosCount++;
         continue;
-      } else if (argsPosCount < args.length) {
+      } else if (argsPosCount < args.length && el === args[argsPosCount]) {
         console.log("value " + args[argsPosCount] + " was removed succesfully");
         argsPosCount = 0;
         console.log("argsPosCount: reset");
         break;
       } else {
-        console.log("argsPosCount: reset");
-        argsPosCount = 0;
         console.log("el: " + el + " is passed into the array");
+        argsPosCount = 0;
+        console.log("argsPosCount: reset");
         return el;
       }
     }
-
-    // console.log(index, arrayKeep.length, argsPosCount, args.length);
   });
   return result;
 };
-console.log(removeFromArray([1, 2, 3, 4], 4, 1, 3, 2));
+
+console.log(removeFromArray([1, 2, 3], "1", 3));
 // Do not edit below this line
 module.exports = removeFromArray;
