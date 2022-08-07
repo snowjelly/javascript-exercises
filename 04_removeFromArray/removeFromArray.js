@@ -8,9 +8,6 @@ const removeFromArray = function (arrayKeep, ...arrayRemove) {
     for (i = 0; i < args.length; i++) {
       if (arrayKeep.includes(args[i])) {
         newArray.push(arrayKeep.indexOf(args[i]));
-      } else {
-        //args is null
-        return null;
       }
     }
     return newArray;
