@@ -2,6 +2,10 @@ const sumAll = function(start, end) {
 let sum = 0;
 let add = 0;
 
+if (start < 0 || end < 0) {
+    return "ERROR"
+}
+
 if (start < end) {
     for (i = start; i < end + 1; i++) {
         // 1 + 2 + 3 + 4
