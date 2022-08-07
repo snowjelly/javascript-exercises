@@ -2,7 +2,7 @@ const sumAll = function(start, end) {
 let sum = 0;
 let add = 0;
 
-if (start < 0 || end < 0) {
+if (start < 0 || end < 0 || typeof start != sum || typeof end != sum ) {
     return "ERROR"
 }
 
