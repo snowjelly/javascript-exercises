@@ -27,32 +27,43 @@ const removeFromArray = function (arrayKeep, ...arrayRemove) {
   };
   logPreResult();
 
-  let iter = 0;
+  let argsPosCount = 0;
   //loop and filter out whatever we return. el is essentially result[i] and index is "i"
   const result = arrayKeep.filter((el, index) => {
     if (removeIndex() === null) {
       return arrayKeep;
     }
-    // el is result[i]
-    // index is 'i'
-    //loop through the arguments that need to be removed to find what we need to return to filter out
-    console.log(
-      "testing removal of value: " + args[iter],
-      "on element: " + el,
-      "in indicies => " + "arrayKeep: " + index + " args: " + iter
-    );
-    //return
-    if (el != args[iter]) {
-      return el;
-    } else {
-      console.log("value " + args[iter] + " was removed succesfully");
-      iter++;
+    while (argsPosCount != -1) {
+      // el is result[i]
+      // index is 'i'
+      //loop through the arguments that need to be removed to find what we need to return to filter out
+      if (argsPosCount < args.length) {
+        console.log(
+          "testing removal of value: " + args[argsPosCount],
+          "on element: " + el,
+          "in indicies => " + "arrayKeep: " + index + " args: " + argsPosCount
+        );
+      }
+
+      //return
+
+      if (el != args[argsPosCount] && argsPosCount < args.length) {
+        console.log("el: " + el + " is passed into the array");
+        return el;
+      } else if (argsPosCount < args.length) {
+        console.log("value " + args[argsPosCount] + " was removed succesfully");
+        argsPosCount++;
+        break;
+      } else {
+        console.log("argsPosCount: reset");
+        argsPosCount = 0;
+      }
     }
+
+    // console.log(index, arrayKeep.length, argsPosCount, args.length);
   });
   return result;
 };
-console.log(removeFromArray([1, 2, 3, 4], 1, 4));
-
-//console.log(removeFromArray(["yes", "no", "epic"], "yes"));
+console.log(removeFromArray([1, 2, 3, 4], 1, 2));
 // Do not edit below this line
 module.exports = removeFromArray;
