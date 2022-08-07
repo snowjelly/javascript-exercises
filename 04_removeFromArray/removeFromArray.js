@@ -30,9 +30,9 @@ const removeFromArray = function (arrayKeep, ...arrayRemove) {
   let argsPosCount = 0;
   //loop and filter out whatever we return. el is essentially result[i] and index is "i"
   const result = arrayKeep.filter((el, index) => {
-    if (removeIndex() === null) {
-      return arrayKeep;
-    }
+    // if (removeIndex() === null) { this was failing a test lol
+    //   return arrayKeep;
+    // }
     while (argsPosCount != -1) {
       // el is result[i]
       // index is 'i'
@@ -48,15 +48,18 @@ const removeFromArray = function (arrayKeep, ...arrayRemove) {
       //return
 
       if (el != args[argsPosCount] && argsPosCount < args.length) {
-        console.log("el: " + el + " is passed into the array");
-        return el;
+        argsPosCount++;
+        continue;
       } else if (argsPosCount < args.length) {
         console.log("value " + args[argsPosCount] + " was removed succesfully");
-        argsPosCount++;
+        argsPosCount = 0;
+        console.log("argsPosCount: reset");
         break;
       } else {
         console.log("argsPosCount: reset");
         argsPosCount = 0;
+        console.log("el: " + el + " is passed into the array");
+        return el;
       }
     }
 
@@ -64,6 +67,6 @@ const removeFromArray = function (arrayKeep, ...arrayRemove) {
   });
   return result;
 };
-console.log(removeFromArray([1, 2, 3, 4], 1, 2));
+console.log(removeFromArray([1, 2, 3, 4], 4, 1, 3, 2));
 // Do not edit below this line
 module.exports = removeFromArray;
