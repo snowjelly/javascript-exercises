@@ -1,10 +1,10 @@
 const sumAll = require('./sumAll')
 
 describe('sumAll', () => {
-  test('sums numbers within the range', () => {
+  test.skip('sums numbers within the range', () => {
     expect(sumAll(1, 4)).toEqual(10);
   });
-  test('works with large numbers', () => {
+  test.skip('works with large numbers', () => {
     expect(sumAll(1, 4000)).toEqual(8002000);
   });
   test.skip('works with larger number first', () => {
